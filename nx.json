@@ -1,0 +1,11 @@
+{
+  "npmScope": "demo-app",
+  "projects": {
+    "customer-portal": {
+      "tags": []
+    },
+    "customer-portal-e2e": {
+      "tags": []
+    }
+  }
+}
