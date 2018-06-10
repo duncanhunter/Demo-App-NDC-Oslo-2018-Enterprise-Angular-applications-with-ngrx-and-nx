@@ -21,6 +21,9 @@
       ],
       "@demo-app/auth": [
         "libs/auth/src/index.ts"
+      ],
+      "@demo-app/material": [
+        "libs/material/src/index.ts"
       ]
     }
   },

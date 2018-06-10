@@ -1,0 +1,76 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "duncan",
+        "country": "australia",
+        "password": "123"
+      },
+      {
+        "id": 2,
+        "username": "sarah",
+        "country": "england",
+        "password": "123"
+      },
+      {
+        "id": 3,
+        "username": "admin",
+        "country": "usa",
+        "password": "123"
+      },
+      {
+        "username": "test2",
+        "password": "123",
+        "id": 4
+      }
+    ],
+    "profiles": [
+      {
+        "id": 1,
+        "userId": 1,
+        "job": "plumber"
+      },
+      {
+        "id": 2,
+        "userId": 2,
+        "job": "developer"
+      },
+      {
+        "id": 3,
+        "userId": 3,
+        "job": "manager"
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "name": "spanner",
+        "category": "tools"
+      },
+      {
+        "id": 2,
+        "name": "hammer",
+        "category": "tools"
+      },
+      {
+        "id": 3,
+        "name": "screw driver",
+        "category": "tools"
+      },
+      {
+        "id": 4,
+        "name": "paint brush",
+        "category": "paint"
+      },
+      {
+        "id": 5,
+        "name": "paint roller",
+        "category": "tools"
+      },
+      {
+        "id": 6,
+        "name": "paint",
+        "category": "tools"
+      }
+    ]
+  }

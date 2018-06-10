@@ -9,6 +9,9 @@
     },
     "auth": {
       "tags": []
+    },
+    "material": {
+      "tags": []
     }
   }
 }
