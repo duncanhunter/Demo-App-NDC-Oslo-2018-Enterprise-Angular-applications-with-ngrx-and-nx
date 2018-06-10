@@ -176,6 +176,34 @@
           }
         }
       }
+    },
+    "layout": {
+      "root": "libs/layout",
+      "sourceRoot": "libs/layout/src",
+      "projectType": "library",
+      "prefix": "app",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/layout/src/test.ts",
+            "tsConfig": "libs/layout/tsconfig.spec.json",
+            "karmaConfig": "libs/layout/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/layout/tsconfig.lib.json",
+              "libs/layout/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

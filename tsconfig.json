@@ -24,6 +24,9 @@
       ],
       "@demo-app/material": [
         "libs/material/src/index.ts"
+      ],
+      "@demo-app/layout": [
+        "libs/layout/src/index.ts"
       ]
     }
   },
