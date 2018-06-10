@@ -28,7 +28,7 @@
       {
         "id": 1,
         "userId": 1,
-        "job": "plumber"
+        "job": "Plumber"
       },
       {
         "id": 2,
@@ -38,38 +38,38 @@
       {
         "id": 3,
         "userId": 3,
-        "job": "manager"
+        "job": "Manager"
       }
     ],
     "products": [
       {
         "id": 1,
-        "name": "spanner",
+        "name": "Spanner",
         "category": "tools"
       },
       {
         "id": 2,
-        "name": "hammer",
+        "name": "Hammer",
         "category": "tools"
       },
       {
         "id": 3,
-        "name": "screw driver",
+        "name": "Screw driver",
         "category": "tools"
       },
       {
         "id": 4,
-        "name": "paint brush",
+        "name": "Paint brush",
         "category": "paint"
       },
       {
         "id": 5,
-        "name": "paint roller",
+        "name": "Paint roller",
         "category": "tools"
       },
       {
         "id": 6,
-        "name": "paint",
+        "name": "Paint",
         "category": "tools"
       }
     ]
