@@ -6,6 +6,9 @@
     },
     "customer-portal-e2e": {
       "tags": []
+    },
+    "auth": {
+      "tags": []
     }
   }
 }

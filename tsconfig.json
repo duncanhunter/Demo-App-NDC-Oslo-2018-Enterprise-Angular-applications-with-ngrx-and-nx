@@ -18,6 +18,9 @@
     "paths": {
       "@demo-app/*": [
         "libs/*"
+      ],
+      "@demo-app/auth": [
+        "libs/auth/src/index.ts"
       ]
     }
   },
