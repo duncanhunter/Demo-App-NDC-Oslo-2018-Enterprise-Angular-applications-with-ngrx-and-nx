@@ -1,31 +1,38 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
-import {
-  AuthActions,
-  AuthActionTypes,
-  LoadAuth,
-  AuthLoaded
-} from './auth.actions';
-import { AuthState } from './auth.reducer';
-import { DataPersistence } from '@nrwl/nx';
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { AuthActionTypes } from './auth.actions';
+import { mergeMap, map, catchError, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { AuthService } from './../services/auth/auth.service';
+import * as authActions from './auth.actions';
+import { User } from '@demo-app/data-models';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthEffects {
-  @Effect() effect$ = this.actions$.ofType(AuthActionTypes.AuthAction);
-
   @Effect()
-  loadAuth$ = this.dataPersistence.fetch(AuthActionTypes.LoadAuth, {
-    run: (action: LoadAuth, state: AuthState) => {
-      return new AuthLoaded(state);
-    },
+  login$ = this.actions$.pipe(
+    ofType(AuthActionTypes.Login),
+    mergeMap((action: authActions.Login) =>
+      this.authService
+        .login(action.payload)
+        .pipe(
+          map((user: User) => new authActions.LoginSuccess(user)),
+          catchError(error => of(new authActions.LoginFail(error)))
+        )
+    )
+  );
 
-    onError: (action: LoadAuth, error) => {
-      console.error('Error', error);
-    }
-  });
+  @Effect({ dispatch: false })
+  navigateToProfile$ = this.actions$.pipe(
+    ofType(AuthActionTypes.LoginSuccess),
+    map((action: authActions.LoginSuccess) => action.payload),
+    tap(() => this.router.navigate([`/products`]))
+  );
 
   constructor(
     private actions$: Actions,
-    private dataPersistence: DataPersistence<AuthState>
+    private authService: AuthService,
+    private router: Router
   ) {}
 }

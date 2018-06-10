@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '@demo-app/auth';
-import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AuthState } from '@demo-app/auth';
 import { User } from '@demo-app/data-models';
-
+import { Observable } from 'rxjs/Observable';
+import { getUser } from '@demo-app/auth';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -11,9 +12,9 @@ import { User } from '@demo-app/data-models';
 export class LayoutComponent implements OnInit {
   user$: Observable<User>;
 
-  constructor(private authService: AuthService) {}
+  constructor(private store: Store<AuthState>) {}
 
   ngOnInit() {
-    this.user$ = this.authService.user$;
+    this.user$ = this.store.select(getUser);
   }
 }

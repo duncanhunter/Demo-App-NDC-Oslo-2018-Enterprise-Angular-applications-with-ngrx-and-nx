@@ -4,33 +4,33 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { DataPersistence } from '@nrwl/nx';
 import { hot } from '@nrwl/nx/testing';
 
-import { AuthEffects } from './auth.effects';
-import { LoginSuccess, LoginFail } from './auth.actions';
+import { ProductsEffects } from './products.effects';
+import { LoadProductsSuccess, LoadProductsFail } from './products.actions';
 
 import { Observable } from 'rxjs';
 
-describe('AuthEffects', () => {
+describe('ProductsEffects', () => {
   let actions$: Observable<any>;
-  let effects$: AuthEffects;
+  let effects$: ProductsEffects;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [StoreModule.forRoot({})],
       providers: [
-        AuthEffects,
+        ProductsEffects,
         DataPersistence,
         provideMockActions(() => actions$)
       ]
     });
 
-    effects$ = TestBed.get(AuthEffects);
+    effects$ = TestBed.get(ProductsEffects);
   });
 
   describe('someEffect', () => {
     it('should work', () => {
-      actions$ = hot('-a-|', { a: new LoginSuccess({}) });
-      expect(effects$.login$).toBeObservable(
-        hot('-a-|', { a: new LoginFail({}) })
+      actions$ = hot('-a-|', { a: new LoadProductsSuccess({}) });
+      expect(effects$.loadProducts$).toBeObservable(
+        hot('-a-|', { a: new LoadProductsFail({}) })
       );
     });
   });
