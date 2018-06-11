@@ -65,12 +65,12 @@
       {
         "id": 5,
         "name": "Paint roller",
-        "category": "tools"
+        "category": "paint"
       },
       {
         "id": 6,
         "name": "Paint",
-        "category": "tools"
+        "category": "paint"
       }
     ]
   }
